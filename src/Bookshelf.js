@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 class Bookshelf extends Component {
   render() {
     return (
-      <div> Bookshelf </div>
-/*
       <div className="list-books">
         <div className="list-books-title">
           <h1>MyReads</h1>
@@ -161,7 +159,6 @@ class Bookshelf extends Component {
           </div>
         </div>
       </div>
-      */
     )
   }
 }
