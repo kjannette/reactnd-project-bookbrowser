@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class Bookshelf extends Component {
 
   render() {
-    const books = this.props
+    const books = this.props.books
 
-    console.log(books)
+    console.log(books[1])
 
     return (
       <div className="list-books">
