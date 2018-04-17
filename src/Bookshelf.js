@@ -5,7 +5,9 @@ class Bookshelf extends Component {
   render() {
     const books = this.props.books
 
-    console.log(books[1])
+    console.log(books)
+
+    console.log(books.filter(function(book) => book.shelf === "currentlyReading"))
 
     return (
       <div className="list-books">
