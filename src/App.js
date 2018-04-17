@@ -8,10 +8,15 @@ import './App.css'
 
 class BooksApp extends React.Component {
 
+  state = {
+    books: []
+  }
+
   componentDidMount() {
-    getAll().then((books) =>
-    console.log(books)
-    )
+    getAll().then((books) => {
+      console.log(books)
+      this.setState({ books })
+    })
   }
 
   render() {
