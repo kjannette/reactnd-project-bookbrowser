@@ -14,7 +14,7 @@ class BooksApp extends React.Component {
 
   componentDidMount() {
     getAll().then((books) => {
-      console.log(books)
+    //  console.log(books)
       this.setState({ books })
     })
   }
@@ -26,7 +26,7 @@ class BooksApp extends React.Component {
         <div className="app">
 
             <Route exact path='/' render={() => (
-              <Bookshelf />
+              <Bookshelf state={this.state.books}/>
             )}/>
 
             <Route path='/search' render={() => (

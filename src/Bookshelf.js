@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 class Bookshelf extends Component {
+
   render() {
+    console.log('PROPS', this.props)
     return (
       <div className="list-books">
         <div className="list-books-title">
