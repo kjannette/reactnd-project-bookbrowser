@@ -8,9 +8,12 @@ import './App.css'
 
 class BooksApp extends React.Component {
 
-  state = {
-    books: []
-  }
+  constructor() {
+    super();
+    this.state = {
+      books: []
+    }
+  };
 
   componentDidMount() {
     getAll().then((books) => {
@@ -20,7 +23,7 @@ class BooksApp extends React.Component {
 
   onSelectChange = (e) => {
     const shelf = e.target.value
-    console.log(shelf)
+    this.setState(shelf)
   }
 
   render() {
