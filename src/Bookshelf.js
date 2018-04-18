@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 
 class Bookshelf extends Component {
 
-onSelectChange = (e) => {
-  const shelf = e.target.value
-  console.log(shelf)
-}
-
   render() {
     const books = this.props.books
+    const onSelect = this.props.onSelect
 
   //  console.log(books)
 
@@ -34,7 +30,7 @@ onSelectChange = (e) => {
                           <div className="book-top">
                             <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${ book.imageLinks.thumbnail }")` }}></div>
                             <div className="book-shelf-changer">
-                              <select onChange={this.onSelectChange}>
+                              <select onChange={onSelect}>
                                 <option value="none" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
                                 <option value="wantToRead">Want to Read</option>
@@ -66,7 +62,7 @@ onSelectChange = (e) => {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${ book.imageLinks.thumbnail }")` }}></div>
                           <div className="book-shelf-changer">
-                            <select onChange={this.onSelectChange}>
+                            <select onChange={onSelect}>
                               <option value="none" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>
@@ -98,7 +94,7 @@ onSelectChange = (e) => {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${ book.imageLinks.thumbnail }")` }}></div>
                           <div className="book-shelf-changer">
-                            <select onChange={this.onSelectChange}>
+                            <select onChange={this.onSelect}>
                               <option value="none" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>

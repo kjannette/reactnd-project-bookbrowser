@@ -18,6 +18,11 @@ class BooksApp extends React.Component {
     })
   }
 
+  onSelectChange = (e) => {
+    const shelf = e.target.value
+    console.log(shelf)
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -25,7 +30,10 @@ class BooksApp extends React.Component {
         <div className="app">
 
             <Route exact path='/' render={() => (
-              <Bookshelf books={this.state.books}/>
+              <Bookshelf
+                books={this.state.books}
+                onSelect={this.onSelectChange}
+              />
             )}/>
 
             <Route path='/search' render={() => (
