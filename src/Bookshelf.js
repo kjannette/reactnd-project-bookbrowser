@@ -5,11 +5,12 @@ class Bookshelf extends Component {
   render() {
     const books = this.props.books
 
-    console.log(books)
-
-    console.log(books.filter(function(book) => book.shelf === "currentlyReading"))
+    console.log(books.filter(function(book){
+      return book.shelf === "currentlyReading"
+    }))
 
     return (
+
       <div className="list-books">
         <div className="list-books-title">
           <h1>MyReads</h1>
