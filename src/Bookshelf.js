@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Bookshelf extends Component {
 
 onSelectChange = (e) => {
-  console.log(e.target.value)
-
+  const shelf = e.target.value
+  console.log(shelf)
 }
 
   render() {
