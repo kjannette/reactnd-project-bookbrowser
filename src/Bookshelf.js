@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 class Bookshelf extends Component {
 
+onSelectChange = () => {
+  console.log("onSelectChange")
+}
+
   render() {
     const books = this.props.books
 
@@ -29,7 +33,7 @@ class Bookshelf extends Component {
                           <div className="book-top">
                             <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${ book.imageLinks.thumbnail }")` }}></div>
                             <div className="book-shelf-changer">
-                              <select>
+                              <select onChange={this.onSelectChange}>
                                 <option value="none" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
                                 <option value="wantToRead">Want to Read</option>
@@ -61,7 +65,7 @@ class Bookshelf extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${ book.imageLinks.thumbnail }")` }}></div>
                           <div className="book-shelf-changer">
-                            <select>
+                            <select onChange={this.onSelectChange}>
                               <option value="none" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>
@@ -93,7 +97,7 @@ class Bookshelf extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${ book.imageLinks.thumbnail }")` }}></div>
                           <div className="book-shelf-changer">
-                            <select>
+                            <select onChange={this.onSelectChange}>
                               <option value="none" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>
