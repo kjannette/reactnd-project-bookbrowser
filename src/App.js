@@ -23,7 +23,7 @@ class BooksApp extends React.Component {
 
   onSelectChange = (e) => {
     const shelf = e.target.value
-    this.setState(shelf)
+
   }
 
   render() {
