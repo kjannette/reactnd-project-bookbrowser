@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 
 class Bookshelf extends Component {
 
-onSelectChange = () => {
-  console.log("onSelectChange")
+onSelectChange = (e) => {
+  console.log(e.target.value)
+
 }
 
   render() {
     const books = this.props.books
 
-    console.log(books)
+  //  console.log(books)
 
     return (
 
