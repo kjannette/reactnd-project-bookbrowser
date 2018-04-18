@@ -26,8 +26,10 @@ class BooksApp extends React.Component {
     const shelf = e.target.value
     console.log(id, shelf)
 
-    this.setState((prevState) => {
-      prevState.filter(name === book.id)
+    this.setState((prevState, id) => {
+      prevState.filter(function(id == book.id) {
+
+      })
     })
   }
 
