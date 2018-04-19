@@ -25,10 +25,10 @@ class BooksApp extends React.Component {
     const id = e.target.name
     const newShelf = e.target.value
     console.log(id, newShelf)
-    const changeShelf = this.state.books.filter((book) => { return book.id === id})
+    let changeShelf = this.state.books.filter((book) => { return book.id === id})
     console.log("changeShelf: ", changeShelf)
     this.setState({
-      changeShelf.shelf: changeShelf.newShelf
+
     })
   }
 
