@@ -24,8 +24,6 @@ class BooksApp extends React.Component {
   onSelectChange = (e) => {
     const id = e.target.name
     const newShelf = e.target.value
-//    console.log(id, newShelf)
-    let changeShelf = this.state.books.filter((book) => { return book.id === id})
     const books = this.state.books.slice(); // Create local copy to change.
     books.forEach((book) => {
       if (book.id === id) {
