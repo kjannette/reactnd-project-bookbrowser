@@ -27,8 +27,24 @@ class BooksApp extends React.Component {
   }
 
   onResultSelect = (e) => {
-    console.log("onResultSelect")
-    this.history.push('/');
+
+    const books = this.state.books
+    const id = e.target.name
+    const newShelf = e.target.value
+    const results = this.state.results
+    let newBook
+
+    results.forEach((result) => {
+      if (result.id === id) {
+        newBook = result
+        newBook.shelf = newShelf
+      }
+    });
+
+    this.setState({
+      books: [...newBook]
+    })
+
   }
 
   onSelectChange = (e) => {
