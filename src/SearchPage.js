@@ -6,6 +6,8 @@ class SearchPage extends Component {
   render() {
 
     const onSearch = this.props.onSearch
+    const results = this.props.results
+    console.log("RESULT ", results[0])
 
     return (
       <div className="search-books">
@@ -20,7 +22,10 @@ class SearchPage extends Component {
           </div>
         </div>
         <div className="search-books-results">
-          <ol className="books-grid"></ol>
+          <ol className="books-grid">
+
+
+          </ol>
         </div>
       </div>
     )

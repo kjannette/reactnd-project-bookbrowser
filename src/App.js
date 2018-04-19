@@ -11,7 +11,8 @@ class BooksApp extends React.Component {
   constructor() {
     super();
     this.state = {
-      books: []
+      books: [],
+      results: []
     }
   };
 
@@ -35,10 +36,11 @@ class BooksApp extends React.Component {
 
   onSearch = (query) => {
     if (query.length > 3) {
-      search(query).then((result) =>
-      console.log(result))
-    }
+      search(query).then((results) => {
+        this.setState({ results })
+    })
   }
+}
 
   render() {
     return (
@@ -55,6 +57,7 @@ class BooksApp extends React.Component {
 
             <Route path='/search' render={() => (
               <SearchPage
+                results={this.state.results}
                 onSearch={this.onSearch}
               />
             )}/>
