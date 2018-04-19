@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 class SearchPage extends Component {
+
   render() {
+
+    const onSearch = this.props.onSearch
+
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -11,6 +15,7 @@ class SearchPage extends Component {
             <input
               type="text"
               placeholder="Search by title or author"
+              onChange={e => onSearch(e.target.value)}
             />
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Link, Route } from 'react-router-dom'
 // import * as BooksAPI from './BooksAPI'
 import Bookshelf from './Bookshelf'
-import { getAll } from './BooksAPI'
+import { getAll, search } from './BooksAPI'
 import SearchPage from './SearchPage'
 import './App.css'
 
@@ -33,6 +33,13 @@ class BooksApp extends React.Component {
     this.setState({ books });
   }
 
+  onSearch = (query) => {
+    if (query.length > 3) {
+      search(query).then((result) =>
+      console.log(result))
+    }
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -47,7 +54,9 @@ class BooksApp extends React.Component {
             )}/>
 
             <Route path='/search' render={() => (
-              <SearchPage />
+              <SearchPage
+                onSearch={this.onSearch}
+              />
             )}/>
 
             <div className="open-search">
