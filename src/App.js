@@ -28,7 +28,6 @@ class BooksApp extends React.Component {
 
   onResultSelect = (e) => {
 
-    const books = this.state.books
     const id = e.target.name
     const newShelf = e.target.value
     const results = this.state.results
