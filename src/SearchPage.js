@@ -7,6 +7,8 @@ class SearchPage extends Component {
 
     const onSearch = this.props.onSearch
     const results = this.props.results
+    const onSelect = this.props.onSelect
+
     console.log("RESULTS", results)
 
     return (
@@ -31,7 +33,7 @@ class SearchPage extends Component {
                 <div className="book-top">
                   <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${ result.imageLinks.thumbnail }")` }}></div>
                   <div className="book-shelf-changer">
-                    <select name={result.id}>
+                    <select name={result.id} onChange={onSelect}>
                       <option value="none">Move to...</option>
                       <option value="currentlyReading">Currently Reading</option>
                       <option value="wantToRead">Want to Read</option>

@@ -1,10 +1,14 @@
 import React from 'react'
-import { BrowserRouter, Link, Route } from 'react-router-dom'
+import { Router } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 // import * as BooksAPI from './BooksAPI'
 import Bookshelf from './Bookshelf'
+import createHistory from 'history/createBrowserHistory'
 import { getAll, search } from './BooksAPI'
 import SearchPage from './SearchPage'
 import './App.css'
+
+export const history = createHistory();
 
 class BooksApp extends React.Component {
 
@@ -20,6 +24,11 @@ class BooksApp extends React.Component {
     getAll().then((books) => {
       this.setState({ books })
     })
+  }
+
+  onResultSelect = (e) => {
+    console.log("onResultSelect")
+    this.history.push('/');
   }
 
   onSelectChange = (e) => {
@@ -44,7 +53,7 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <Router history={history}>
 
         <div className="app">
 
@@ -59,6 +68,7 @@ class BooksApp extends React.Component {
               <SearchPage
                 results={this.state.results}
                 onSearch={this.onSearch}
+                onSelect={this.onResultSelect}
               />
             )}/>
 
@@ -68,7 +78,7 @@ class BooksApp extends React.Component {
 
         </div>
 
-      </BrowserRouter>
+      </Router>
     )
   }
 }
