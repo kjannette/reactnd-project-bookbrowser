@@ -24,7 +24,7 @@ class BooksApp extends React.Component {
   onSelectChange = (e) => {
     const id = e.target.name
     const newShelf = e.target.value
-    const books = this.state.books.slice();
+    const books = this.state.books
     books.forEach((book) => {
       if (book.id === id) {
         book.shelf = newShelf;
