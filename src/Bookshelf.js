@@ -6,8 +6,6 @@ class Bookshelf extends Component {
     const books = this.props.books
     const onSelect = this.props.onSelect
 
-//    console.log(books)
-
     return (
 
       <div className="list-books">

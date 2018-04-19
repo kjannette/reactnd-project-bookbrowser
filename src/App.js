@@ -18,19 +18,17 @@ class BooksApp extends React.Component {
   componentDidMount() {
     getAll().then((books) => {
       this.setState({ books })
+      console.log(this.state.books[0].id)
     })
   }
 
   onSelectChange = (e) => {
     const id = e.target.name
     const shelf = e.target.value
-    console.log(id, shelf)
+//    console.log(id, shelf)
+    const changeShelf = this.state.books.filter((id) => this.state.books.id === id)
+    console.log("changeShelf", changeShelf)
 
-    this.setState((prevState, id) => {
-      prevState.filter(function(id == book.id) {
-
-      })
-    })
   }
 
   render() {
