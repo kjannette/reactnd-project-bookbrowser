@@ -6,14 +6,16 @@ class SearchPage extends Component {
 
   constructor(){
     super();
-    let results = ''
+    this.state = {
+      results: [],
+    }
   }
 
   onSearch = (query) => {
     if (query.length > 3) {
-      search(query).then((searchResults) => {
-        this.results = searchResults
+      search(query).then((results) => {
       })
+      this.setState({ results });
     }
   };
 
@@ -36,9 +38,9 @@ class SearchPage extends Component {
         <div className="search-books-results">
           <ol className="books-grid">
 
-          if (this.results) {
+          if (this.state.results) {
 
-            {this.results.map((result) =>
+            this.state.results.map((result) =>
 
               <li key={result.id}>
                 <div className="book">
@@ -59,7 +61,7 @@ class SearchPage extends Component {
                 </div>
               </li>
 
-            )}
+            )
           }
 
 
