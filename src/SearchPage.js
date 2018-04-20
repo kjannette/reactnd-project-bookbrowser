@@ -4,13 +4,18 @@ import { search } from './BooksAPI'
 
 class SearchPage extends Component {
 
+  constructor(){
+    super();
+    this.results = ''
+  }
+
   onSearch = (query) => {
     if (query.length > 3) {
-      search(query).then((results) => {
-        this.results = results
-    })
-  }
-}
+      search(query).then((searchResults) => {
+        this.results = searchResults
+      })
+    }
+  };
 
   render() {
 
@@ -26,14 +31,14 @@ class SearchPage extends Component {
             <input
               type="text"
               placeholder="Search by title or author"
-              onChange={e => onSearch(e.target.value)}
+              onChange={e => this.onSearch(e.target.value)}
             />
           </div>
         </div>
         <div className="search-books-results">
           <ol className="books-grid">
 
-          {results.map((result) =>
+          {this.results.map((result) =>
 
             <li key={result.id}>
               <div className="book">
