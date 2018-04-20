@@ -23,7 +23,7 @@ class BooksApp extends React.Component {
     getAll().then((books) => {
       this.setState({ books })
     })
-  }
+  };
 
   onResultSelect = (e) => {
 
@@ -41,8 +41,8 @@ class BooksApp extends React.Component {
     newBooks.forEach((book) => {
       update(book, book.shelf)
     })
-    history.push('/')
-  }
+    history.push('/');
+  };
 
   onSelectChange = (e) => {
     const id = e.target.name
@@ -88,6 +88,6 @@ class BooksApp extends React.Component {
       </Router>
     )
   }
-}
+};
 
 export default BooksApp
