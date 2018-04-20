@@ -39,10 +39,9 @@ class BooksApp extends React.Component {
         newBook.shelf = newShelf
       }
     });
-
     this.setState({
       books: [...newBook]
-    })
+    });
   }
 
   onSelectChange = (e) => {
