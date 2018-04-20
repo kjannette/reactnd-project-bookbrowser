@@ -57,7 +57,7 @@ class SearchPage extends Component {
                             <div className="book-authors">{result.authors}</div>
                           </div>
                         </li>
-            }
+            })
           }
           </ol>
         </div>
