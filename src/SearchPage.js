@@ -54,7 +54,7 @@ class SearchPage extends Component {
                                       </div>
                                   </div>
                                 <div className="book-title">{result.title}</div>
-                            <div className="book-authors">{result.authors ? result.authors : ''}</div>
+                            <div className="book-authors">{result.authors ? result.authors : 'Author Unknown'}</div>
                           </div>
                         </li>
                   })
