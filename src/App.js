@@ -40,7 +40,7 @@ class BooksApp extends React.Component {
       }
     });
     this.setState({
-      books: [...newBook]
+      books: [...this.state.books, newBook]
     });
   }
 
