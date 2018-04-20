@@ -4,7 +4,7 @@ import { Link, Route } from 'react-router-dom'
 // import * as BooksAPI from './BooksAPI'
 import Bookshelf from './Bookshelf'
 import createHistory from 'history/createBrowserHistory'
-import { getAll, search } from './BooksAPI'
+import { getAll, search, update } from './BooksAPI'
 import SearchPage from './SearchPage'
 import './App.css'
 
@@ -48,9 +48,11 @@ class BooksApp extends React.Component {
     const id = e.target.name
     const newShelf = e.target.value
     const books = this.state.books
+
     books.forEach((book) => {
       if (book.id === id) {
         book.shelf = newShelf;
+        update(book, newShelf)
       }
     });
     this.setState({ books });
