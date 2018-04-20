@@ -14,8 +14,8 @@ class SearchPage extends Component {
   onSearch = (query) => {
     if (query.length > 3) {
       search(query).then((results) => {
+        this.setState({ results });
       })
-      this.setState({ results });
     }
   };
 
@@ -38,9 +38,7 @@ class SearchPage extends Component {
         <div className="search-books-results">
           <ol className="books-grid">
 
-          if (this.state.results) {
-
-            this.state.results.map((result) =>
+            this.state.results.map((result) => (
 
               <li key={result.id}>
                 <div className="book">
@@ -62,8 +60,6 @@ class SearchPage extends Component {
               </li>
 
             )
-          }
-
 
           </ol>
         </div>
