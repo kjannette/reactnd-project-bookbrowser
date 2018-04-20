@@ -37,6 +37,10 @@ class BooksApp extends React.Component {
         books: [...this.state.books, newBook]
       });
     });
+    const newBooks = this.state.books
+    newBooks.forEach((book) => {
+      update(book, book.shelf)
+    })
   }
 
   onSelectChange = (e) => {
