@@ -16,7 +16,7 @@ class SearchPage extends Component {
 
     const onSelect = this.props.onSelect
 
-    console.log("RESULTS", results)
+//    console.log("RESULTS", results)
 
     return (
       <div className="search-books">
