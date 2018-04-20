@@ -35,11 +35,11 @@ class BooksApp extends React.Component {
       this.setState({
         books: [...this.state.books, newBook]
       });
+      const newBooks = this.state.books
+      newBooks.forEach((book) => {
+        update(book, book.shelf)
+      })
     });
-    const newBooks = this.state.books
-    newBooks.forEach((book) => {
-      update(book, book.shelf)
-    })
     history.push('/');
   };
 
