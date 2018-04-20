@@ -6,7 +6,7 @@ class SearchPage extends Component {
 
   constructor(){
     super();
-    this.results = ''
+    let results = ''
   }
 
   onSearch = (query) => {
