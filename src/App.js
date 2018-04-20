@@ -16,7 +16,6 @@ class BooksApp extends React.Component {
     super();
     this.state = {
       books: [],
-      results: []
     }
   };
 
@@ -56,6 +55,7 @@ class BooksApp extends React.Component {
   }
 
   render() {
+
     return (
       <Router history={history}>
 
