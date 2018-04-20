@@ -41,6 +41,7 @@ class BooksApp extends React.Component {
     newBooks.forEach((book) => {
       update(book, book.shelf)
     })
+    history.push('/')
   }
 
   onSelectChange = (e) => {
