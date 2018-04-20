@@ -30,13 +30,12 @@ class BooksApp extends React.Component {
     const id = e.target.name
     const newShelf = e.target.value
     let newBook
-
     get(id).then((result) => {
       newBook = result
       newBook.shelf = newShelf
-    });
-    this.setState({
-      books: [...this.state.books, newBook]
+      this.setState({
+        books: [...this.state.books, newBook]
+      });
     });
   }
 
