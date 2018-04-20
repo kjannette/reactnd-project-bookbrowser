@@ -1,7 +1,6 @@
 import React from 'react'
 import { Router } from 'react-router-dom'
 import { Link, Route } from 'react-router-dom'
-// import * as BooksAPI from './BooksAPI'
 import Bookshelf from './Bookshelf'
 import createHistory from 'history/createBrowserHistory'
 import { get, getAll, update } from './BooksAPI'
