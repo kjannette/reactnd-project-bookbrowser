@@ -4,7 +4,7 @@ import { Link, Route } from 'react-router-dom'
 // import * as BooksAPI from './BooksAPI'
 import Bookshelf from './Bookshelf'
 import createHistory from 'history/createBrowserHistory'
-import { getAll, search, update } from './BooksAPI'
+import { get, getAll, update } from './BooksAPI'
 import SearchPage from './SearchPage'
 import './App.css'
 
@@ -30,14 +30,11 @@ class BooksApp extends React.Component {
 
     const id = e.target.name
     const newShelf = e.target.value
-    const results = this.state.results
     let newBook
 
-    results.forEach((result) => {
-      if (result.id === id) {
-        newBook = result
-        newBook.shelf = newShelf
-      }
+    get(id).then((result) => {
+      newBook = result
+      newBook.shelf = newShelf
     });
     this.setState({
       books: [...this.state.books, newBook]
@@ -58,14 +55,6 @@ class BooksApp extends React.Component {
     this.setState({ books });
   }
 
-  onSearch = (query) => {
-    if (query.length > 3) {
-      search(query).then((results) => {
-        this.setState({ results })
-    })
-  }
-}
-
   render() {
     return (
       <Router history={history}>
@@ -82,7 +71,6 @@ class BooksApp extends React.Component {
             <Route path='/search' render={() => (
               <SearchPage
                 results={this.state.results}
-                onSearch={this.onSearch}
                 onSelect={this.onResultSelect}
               />
             )}/>

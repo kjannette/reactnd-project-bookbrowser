@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { search } from './BooksAPI'
 
 class SearchPage extends Component {
 
+  onSearch = (query) => {
+    if (query.length > 3) {
+      search(query).then((results) => {
+        this.results = results
+    })
+  }
+}
+
   render() {
 
-    const onSearch = this.props.onSearch
-    const results = this.props.results
     const onSelect = this.props.onSelect
 
     console.log("RESULTS", results)
