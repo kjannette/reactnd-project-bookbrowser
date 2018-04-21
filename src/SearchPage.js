@@ -19,7 +19,6 @@ class SearchPage extends Component {
           for (var book of books) {
             if (result.title === book.title) {
               result.shelf = book.shelf
-              console.log(result)
             }
           }
         }
@@ -53,7 +52,7 @@ class SearchPage extends Component {
                               <div className="book-top">
                                   <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${ result.imageLinks.thumbnail }")`  }}></div>
                                       <div className="book-shelf-changer">
-                                        <select name={result.id} onChange={onSelect}>
+                                        <select name={result.id} onChange={onSelect} defaultValue={result.shelf}>
                                           <option value="none">Move to...</option>
                                           <option value="currentlyReading">Currently Reading</option>
                                           <option value="wantToRead">Want to Read</option>
