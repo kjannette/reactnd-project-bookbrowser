@@ -18,8 +18,8 @@ class SearchPage extends Component {
         for (var result of results) {
           for (var book of books) {
             if (result === book) {
-              //result.shelf = book.shelf
-              console.log(book)
+              result.shelf = book.shelf
+              console.log(result)
             }
           }
         }
