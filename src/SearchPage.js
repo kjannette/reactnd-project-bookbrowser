@@ -17,7 +17,7 @@ class SearchPage extends Component {
       search(query).then((results) => {
         for (var result of results) {
           for (var book of books) {
-            if (result === book) {
+            if (result.title === book.title) {
               result.shelf = book.shelf
               console.log(result)
             }
