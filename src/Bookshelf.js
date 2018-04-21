@@ -5,7 +5,6 @@ class Bookshelf extends Component {
   render() {
     const books = this.props.books
     const onSelect = this.props.onSelect
-
     return (
 
       <div className="list-books">

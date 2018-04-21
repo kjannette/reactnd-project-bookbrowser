@@ -15,10 +15,10 @@ class SearchPage extends Component {
     const books = this.props.books
     if (query.length > 3) {
       search(query).then((results) => {
-        for (var result in results) {
-          for (var book in books) {
-            if (result === book) {
-              result.shelf = book.shelf
+        for (var i = 0; i < books.length; i++) {
+          for (var j = 0; j < results.length; j++) {
+            if (results[j] === books[i]) {
+              results[j].shelf = books[i].shelf
             }
           }
         }
