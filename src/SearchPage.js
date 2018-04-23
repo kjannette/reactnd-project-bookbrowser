@@ -15,14 +15,18 @@ class SearchPage extends Component {
     const books = this.props.books
     if (query.length > 3) {
       search(query).then((results) => {
-        for (var result of results) {
-          for (var book of books) {
-            if (result.title === book.title) {
-              result.shelf = book.shelf
+        if (results.error === undefined) {
+          for (var result of results) {
+            for (var book of books) {
+              if (result.title === book.title) {
+                result.shelf = book.shelf
+              }
             }
           }
+          this.setState({ results });
+        } else {
+          this.setState({results: []})
         }
-        this.setState({ results });
       })
     }
   };
