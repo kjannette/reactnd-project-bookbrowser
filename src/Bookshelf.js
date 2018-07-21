@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Bookshelf.css'
 
 class Bookshelf extends Component {
 
@@ -9,11 +10,12 @@ class Bookshelf extends Component {
 
       <div className="list-books">
         <div className="list-books-title">
+          <span className="logo"></span>
           <h1>MyReads</h1>
         </div>
         <div className="list-books-content">
           <div>
-            <div className="bookshelf">
+            <div className="bookshelf current">
               <h2 className="bookshelf-title">Currently Reading</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
@@ -45,7 +47,7 @@ class Bookshelf extends Component {
                 </ol>
               </div>
             </div>
-            <div className="bookshelf">
+            <div className="bookshelf read">
               <h2 className="bookshelf-title">Want to Read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
@@ -77,7 +79,7 @@ class Bookshelf extends Component {
                 </ol>
               </div>
             </div>
-            <div className="bookshelf">
+            <div className="bookshelf read">
               <h2 className="bookshelf-title">Read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
