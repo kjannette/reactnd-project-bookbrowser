@@ -12,7 +12,7 @@
     padding: 5px 17px;
     background: #f2f2f2;
     font-size: 12px;
-    color: #8e8e8e;
+    color: #000000;
 }
 
 .tags > ul > li > span:hover {
@@ -20,6 +20,10 @@
     padding: 5px 17px;
     background: #ececec;
     font-size: 12px;
-    color: #8e8e8e;
+    color: #000000;
 }	
+
+.tags > .title-tag {
+	margin-left: 45px;
+}
 

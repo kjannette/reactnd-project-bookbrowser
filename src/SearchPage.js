@@ -76,6 +76,7 @@ class SearchPage extends Component {
           </ol>
         </div>
         <div className="tags">
+          <p className="title-tag">Suggested search terms:</p>
           <ul>
             <li><span class="badge">Android</span></li>
             <li><span class="badge">Art</span></li>
