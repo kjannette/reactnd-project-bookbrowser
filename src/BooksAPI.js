@@ -1,5 +1,5 @@
 import SEARCH_API from "../secrets";
-const api = SEARCH_API;
+const api = "https://reactnd-books-api.udacity.com";
 
 // Generate a unique token
 let token = localStorage.token;

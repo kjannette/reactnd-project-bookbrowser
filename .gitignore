@@ -3,3 +3,4 @@ yarn.lock
 .DS_Store
 secrets.js
 build/
+.gitignore
