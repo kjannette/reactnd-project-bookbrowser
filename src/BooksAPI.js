@@ -1,4 +1,3 @@
-import SEARCH_API from "../secrets";
 const api = "https://reactnd-books-api.udacity.com";
 
 // Generate a unique token
