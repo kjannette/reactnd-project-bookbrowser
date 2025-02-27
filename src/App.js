@@ -1,5 +1,5 @@
 import React from "react";
-import { Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Link, Route } from "react-router-dom";
 import Bookshelf from "./Bookshelf";
 import createHistory from "history/createBrowserHistory";
@@ -56,7 +56,7 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <Router history={history}>
+      <BrowserRouter basename="/bb" history={history}>
         <div className="app">
           <Route
             exact
@@ -81,7 +81,7 @@ class BooksApp extends React.Component {
             <Link to="/search">Search for Books</Link>
           </div>
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
